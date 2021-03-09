@@ -149,8 +149,8 @@ u_int16_t in_cksumh(u_int16_t * addr, int len)
     pip_herder->ttl = 0x80;//设定TTL
     pip_herder->protocol = IPPROTO_UDP;//设定协议类型
     pip_herder->check = 0; //设定检验和
-    pip_herder->saddr = inet_addr("192.168.1.120"); //设定源地址
-    pip_herder->daddr = inet_addr("192.168.1.114");//设定目的地址
+    pip_herder->saddr = inet_addr("192.168.1.139"); //设定源地址
+    pip_herder->daddr = inet_addr("192.168.1.139");//设定目的地址
     pip_herder->check = in_cksumh((u_int16_t*)pip_herder, sizeof(ip_header)); //重新设定检验和
 
     //构建UDP数据头;
@@ -161,7 +161,7 @@ u_int16_t in_cksumh(u_int16_t * addr, int len)
     pudp_herder->checkl = 0;//设定检验和
 
 
-    strncpy(ethreqh.ifr_name, "eth0", IFNAMSIZ);
+    strncpy(ethreqh.ifr_name, "wlp1s0", IFNAMSIZ);
     if(-1 == ioctl(sock_raw_fdh, SIOCGIFINDEX, &ethreqh))
     {
         perror("ioctl");
@@ -182,7 +182,6 @@ u_int16_t in_cksumh(u_int16_t * addr, int len)
         {
             perror("sendto");
         }
-//        printf("src host 192.168.1.114\n");
         cout<<numm++<<" lalalallalalallaa"<<endl;
         printf("     %d ,%d\n",sendbufferh[42],sendbufferh[43]);
         usleep(40000);
