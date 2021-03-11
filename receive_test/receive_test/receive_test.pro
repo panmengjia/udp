@@ -49,16 +49,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp
 
 #-----------------------start----------himix200 3516------------------------------
-#TARGET = himix200_receive_test27
+#---------------------------------------------------
+#TARGET = execut/himix200_receive_test0311
+##放置可执行程序目标目录
 #DESTDIR =/home/hisilicon/Desktop/nfs_3516dv300/udpcommunication/receive_test
 
 #INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/lib_build/libpcapinstall/include/
 #LIBS += \
 #        /home/hisilicon/Downloads/libpcap-libpcap-1.7.4/libpcap.a
 
+#---------------------------------------------------
 #LIBS += \
 #    ../../../../../../../opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib/*.so*
-#LIBS +=/opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib/ -lpthread -lrt
+#LIBS +=/opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib/ -lpthread -lrt -ldl
 #------------------------end-----------himix200 3516------------------------------
 
 
@@ -76,12 +79,14 @@ SOURCES += main.cpp
 ##############################ubuntu x86_64#################################################################
 #QMAKE_LIBDIR_FLAGS +=-/home/hisilicon/Downloads/libpcap-libpcap-1.10.0-x86_64/libpcap-libpcap-1.10.0/ -Wl,R
 
+#---------------------------------------------------
 INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/ubuntu_x86_64/libpcap-master_Install/include
 
 LIBS += \
 /home/hisilicon/Desktop/hisilicon3516/udp/ubuntu_x86_64/libpcap-master_Install/lib/libpcap.a \
 /usr/lib/x86_64-linux-gnu/libdbus-1.a \
 /lib/x86_64-linux-gnu/libsystemd.so.0
+#---------------------------------------------------
 
 #INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/lib_build/libpcap-libpcap-1.7.4-3559-himix100-Install/include/
 
@@ -94,7 +99,7 @@ LIBS += \
 ##############################ubuntu x86_64#################################################################
 
 
-QMAKE_CXXFLAGS += -std=c++11 -g
+#QMAKE_CXXFLAGS += -std=c++11 -g
 
 #LIBS += /opt/hisi-linux/x86-arm/arm-hisiv400-linux/target/lib/libdl.so.2 \
 #        /opt/hisi-linux/x86-arm/arm-hisiv400-linux/target/lib/librt.so.1 \

@@ -30,6 +30,7 @@ void getPacket(u_char * arg, const struct pcap_pkthdr * pkthdr, const u_char * p
   else{
       char preimgpath[24];
       char postimgpath[24];
+      cout<<(int)*(packet+41)<<endl;
       cout<<(int)*(packet+42)<<endl;
       cout<<(int)*(packet+43)<<endl;
 //      printf("------------------3516dv300------------------\n");
@@ -94,6 +95,9 @@ int main(int argc, char *argv[])
 
     struct bpf_program filter;
     pcap_compile(device, &filter, "src host 192.168.1.120", 1, 0);
+    //只接收 tcp/udp 的端口是1024的数据包,
+    // https://blog.csdn.net/a1009563517/article/details/47311813/
+    pcap_compile(device, &filter, "src port 1024",1,0);
     pcap_setfilter(device, &filter);
     /* wait loop forever */
     pcap_set_timeout(device,1);

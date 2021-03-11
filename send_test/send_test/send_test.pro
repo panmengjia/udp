@@ -45,13 +45,13 @@ SOURCES += main.cpp
 
 
 #-----------------------start----------himix200 3516------------------------------
-TARGET = himix200_send_test0309
+TARGET = execut/himix200_send_test0309
 DESTDIR =/home/hisilicon/Desktop/nfs_3516dv300/udpcommunication/send_test
 
 INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/lib_build/libpcapinstall/include/
 LIBS += \
         /home/hisilicon/Downloads/libpcap-libpcap-1.7.4/libpcap.a
-
+#------------------------------------------------
 #LIBS += \
 #    ../../../../../../../opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib/*.so*
 #LIBS +=/opt/hisi-linux/x86-arm/arm-himix200-linux/target/lib/ -lpthread -lrt
@@ -73,12 +73,14 @@ LIBS += \
 ##############################ubuntu x86_64#################################################################
 #QMAKE_LIBDIR_FLAGS +=-/home/hisilicon/Downloads/libpcap-libpcap-1.10.0-x86_64/libpcap-libpcap-1.10.0/ -Wl,R
 
+#----------------------------------
 #INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/ubuntu_x86_64/libpcap-master_Install/include
 
 #LIBS += \
 #        /home/hisilicon/Desktop/hisilicon3516/udp/ubuntu_x86_64/libpcap-master_Install/lib/libpcap.a \
 #        /usr/lib/x86_64-linux-gnu/libdbus-1.a \
 #        /lib/x86_64-linux-gnu/libsystemd.so.0
+#----------------------------------
 
 #INCLUDEPATH +=/home/hisilicon/Desktop/hisilicon3516/udp/lib_build/libpcap-libpcap-1.7.4-3559-himix100-Install/include/
 
